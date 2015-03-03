@@ -1,21 +1,28 @@
 $(document).ready(function() {
     var listUslugi = {
         "1": {"name":"снятие", "cost":"150"},
-        "2": {"name":"балансировка", "cost":"150"},
-        "3": {"name":"установка", "cost":"150"},
-        "4": {"name":"мойка", "cost":"150"},
-        "5": {"name":"сборка", "cost":"150"},
-        "6": {"name":"разборка", "cost":"150"},
-        "7": {"name":"подкачка", "cost":"150"},
-        "8": {"name":"косметический ремонт", "cost":"150"},
-        "9": {"name":"вулканизация", "cost":"150"}
+        "2": {"name":"снятие запасного колеса", "cost":"150"},
+        "3": {"name":"снятие спаренных колес", "cost":"175"},
+        "4": {"name":"установка", "cost":"150"},
+        "5": {"name":"установка запасного колеса", "cost":"150"},
+        "6": {"name":"установка спаренных колес", "cost":"175"},
+        "7": {"name":"сборка", "cost":"200"},
+        "8": {"name":"разборка", "cost":"200"},
+        "9": {"name":"подкачка", "cost":"40"},
+        "10": {"name":"косметический ремонт", "cost":"500"},
+        "12": {"name":"утилизация колеса", "cost":"100"},
+        "13": {"name":"чистка диска", "cost":"100"},
+        "14": {"name":"герметизация бортов", "cost":"100"},
+        "15": {"name":"ремонт камеры (1 повреждение)", "cost":"100"},
+        "16": {"name":"ремонт шины (1 повреждение)", "cost":"300"},
+        "17": {"name":"ремонт бескамерной шины с применением жгута", "cost":"150"},
+        "18": {"name":"установка пластыря холодная", "cost":"300"},
+        "19": {"name":"установка пластыря горячая", "cost":"500"},
+        "20": {"name":"установка грибка", "cost":"200"},
+        "21": {"name":"установка ножки гриба", "cost":"200"},
+        "22": {"name":"горячая вулканизация камеры", "cost":"150"}
     };
-    var listTypes = {
-        "light":{"min":"1", "max":"7"},
-        "average":{"min":"5", "max":"12"},
-        "big":{"min":"7", "max":"14"},
-        "traktor":{"min":"8", "max":"14"}
-    };
+
 
     var listDiametr = {
         "1":{"rad":"12","val":"12"},
@@ -39,14 +46,6 @@ $(document).ready(function() {
         $("#calc").append('<div id ="calc' + ccount+'">' +
         '\n<select id="usl" name="uslugi" onchange="calc()"></select>' +
         '\n<input class="types" id="type" type="button" value="тип" onchange="calc()" data-toggle="modal" data-target=".types_wind">' +
-        '\n<div class="modal fade types_wind" aria-hidden="true" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="border: solid 3px;">' +
-            '\n<div class="modal-dialog modal-sm">' +
-                '\n<input class="choose" id="light" type="button" value="light">' +
-                '\n<input class="choose" id="not_l" type="button" value="average">' +
-                '\n<br>' +
-                '\n<input class="choose" id="vbig" type="button" value="big">' +
-                '\n<input class="choose" id="trakt" type="button" value="traktor">' +
-            '\n</div>' +
         '\n</div>' +
         '\n<select id = "rad" name="diametr" onchange="calc()"></select>' +
         '\n<input type="number" name="kol" onchange="calc()">' +
