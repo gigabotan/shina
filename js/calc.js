@@ -44,13 +44,14 @@ $(document).ready(function() {
     function addCalc() {
         ccount +=1;
         $("#calc").append('<div id ="calc' + ccount+'">' +
-        '\n<select id="usl" name="uslugi" onchange="calc()"></select>' +
+        '<select class="form-control id="usl" name="uslugi" onchange="calc()"></select>' +
         '\n<input class="types" id="type" type="button" value="тип" onchange="calc()" data-toggle="modal" data-target=".types_wind">' +
         '\n</div>' +
         '\n<select id = "rad" name="diametr" onchange="calc()"></select>' +
         '\n<input type="number" name="kol" onchange="calc()">' +
         '\nСумма: <output id="ans" name="ans"/>' +
-        '\n</div>');
+        '\n</div>' +
+        '\n<button type="button" class="btn btn-primary" onclick="addCalc()">Еще</button>');
     };
     addCalc();
 
